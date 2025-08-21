@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 15000;
-
 const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/todos';
 
 app.use(cors());
@@ -33,7 +32,7 @@ app.put('/tasks/:id', async (req, res) => {
 });
 
 app.delete('/tasks/:id', async (req, res) => {
-    await Task.findByIdAndDelete(req.params.id);j
+    await Task.findByIdAndDelete(req.params.id);
     res.sendStatus(204);
 });
 
